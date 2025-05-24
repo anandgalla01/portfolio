@@ -31,9 +31,20 @@ export function About() {
             transition={{ duration: 0.5 }}
           >
             <div className="space-y-4">
-              <div className="h-40 w-40 mx-auto md:mx-0 bg-muted rounded-full mb-6 flex items-center justify-center">
-                <span className="text-4xl">AG</span>
-                {/* Placeholder for professional headshot */}
+              <div className="mb-6">
+                <div className="h-40 w-40 mx-auto md:mx-0 overflow-hidden rounded-full border-2 border-primary/20 shadow-md relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+                  <div className="flex items-center justify-center h-full">
+                    <div className="relative z-10 flex flex-col items-center justify-center">
+                      <span className="text-4xl font-semibold text-primary">
+                        AG
+                      </span>
+                      <span className="text-xs text-primary/70 mt-1">
+                        Senior Developer
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <h3 className="text-2xl font-bold">Anand Galla</h3>
               <p className="text-muted-foreground">

@@ -77,13 +77,6 @@ export function FloatingIcons() {
         delay: 0.4,
       },
       {
-        name: "AWS",
-        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-        size: 38,
-        animation: "path4" as const,
-        delay: 2.2,
-      },
-      {
         name: "Docker",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
         size: 36,
@@ -139,6 +132,62 @@ export function FloatingIcons() {
         animation: "path4" as const,
         delay: 1.0,
       },
+      {
+        name: "AWS",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+        size: 38,
+        animation: "path1" as const,
+        delay: 2.2,
+      },
+      {
+        name: "Azure",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+        size: 36,
+        animation: "path4" as const,
+        delay: 1.6,
+      },
+      {
+        name: "HTML5",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        size: 32,
+        animation: "path3" as const,
+        delay: 2.8,
+      },
+      {
+        name: "CSS3",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        size: 32,
+        animation: "path2" as const,
+        delay: 3.2,
+      },
+      {
+        name: "Bootstrap",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+        size: 34,
+        animation: "path4" as const,
+        delay: 1.1,
+      },
+      {
+        name: "Jenkins",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg",
+        size: 36,
+        animation: "path2" as const,
+        delay: 2.4,
+      },
+      {
+        name: "Redis",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+        size: 33,
+        animation: "path3" as const,
+        delay: 1.3,
+      },
+      {
+        name: "GitHub",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+        size: 34,
+        animation: "path1" as const,
+        delay: 2.9,
+      }      
     ];
 
     // Create a grid-like distribution

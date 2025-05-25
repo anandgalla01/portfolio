@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Github } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ScrollIndicator } from "./ScrollIndicator";
+import { FloatingIcons } from "./FloatingIcons";
 
 const codeAnimation = {
   initial: { opacity: 0, y: 20 },
@@ -19,8 +21,9 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-16 pb-8"
+      className="min-h-screen flex items-center justify-center pt-16 pb-8 relative overflow-hidden"
     >
+      <FloatingIcons />
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <div className="flex flex-col justify-center space-y-4">
@@ -114,6 +117,7 @@ public class CloudController {
           </motion.div>
         </div>
       </div>
+      <ScrollIndicator />
     </section>
   );
 }

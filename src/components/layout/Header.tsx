@@ -48,9 +48,9 @@ export function Header() {
 
   const getNavLinkClass = (sectionId: string) => {
     return cn(
-      "transition-colors",
+      "transition-colors relative",
       sectionId === activeSection
-        ? "text-primary font-medium"
+        ? "text-primary font-medium after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-primary after:rounded-full"
         : "text-foreground/80 hover:text-foreground",
     );
   };

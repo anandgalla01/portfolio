@@ -190,6 +190,10 @@
   animation: float-fast 4s ease-in-out infinite;
 }
 
+.card-height {
+  min-height: 450px;
+}
+
 /* Gradient text */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400;

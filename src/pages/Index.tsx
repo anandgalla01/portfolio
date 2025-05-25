@@ -1,4 +1,5 @@
 import { Header } from "@/components/layout/Header";
+import { FloatingIcons } from "@/components/portfolio/FloatingIcons";
 import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { Skills } from "@/components/portfolio/Skills";
@@ -11,6 +12,7 @@ import { Footer } from "@/components/portfolio/Footer";
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <FloatingIcons />
       <Header />
       <main className="flex-grow">
         <Hero />

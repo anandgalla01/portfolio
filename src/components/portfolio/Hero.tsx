@@ -17,7 +17,10 @@ const codeAnimation = {
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 pb-8">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center pt-16 pb-8"
+    >
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <div className="flex flex-col justify-center space-y-4">
@@ -97,7 +100,7 @@ public class CloudController {
             .map(this::transform)
             .subscribeOn(Schedulers.boundedElastic());
     }
-    
+
     private ResponseEntity transform(Data data) {
         // Scalable transformation logic
         return ResponseEntity.ok(data);

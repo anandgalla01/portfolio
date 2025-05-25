@@ -8,15 +8,52 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
+      // Calculate which section is currently in view
+      const sections = [
+        { id: "home", element: document.querySelector("section") },
+        { id: "about", element: document.getElementById("about") },
+        { id: "skills", element: document.getElementById("skills") },
+        { id: "experience", element: document.getElementById("experience") },
+        { id: "projects", element: document.getElementById("projects") },
+        { id: "education", element: document.getElementById("education") },
+        { id: "contact", element: document.getElementById("contact") },
+      ];
+
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.element) {
+          const sectionTop = section.element.offsetTop;
+
+          if (scrollPosition >= sectionTop) {
+            if (activeSection !== section.id) {
+              setActiveSection(section.id);
+            }
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeSection]);
+
+  const getNavLinkClass = (sectionId: string) => {
+    return cn(
+      "transition-colors",
+      sectionId === activeSection
+        ? "text-primary font-medium"
+        : "text-foreground/80 hover:text-foreground",
+    );
+  };
 
   return (
     <header
@@ -34,46 +71,25 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link
-            to="/"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
+          <Link to="/" className={getNavLinkClass("home")}>
             Home
           </Link>
-          <a
-            href="#about"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
+          <a href="#about" className={getNavLinkClass("about")}>
             About
           </a>
-          <a
-            href="#skills"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
+          <a href="#skills" className={getNavLinkClass("skills")}>
             Skills
           </a>
-          <a
-            href="#experience"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
+          <a href="#experience" className={getNavLinkClass("experience")}>
             Experience
           </a>
-          <a
-            href="#projects"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
+          <a href="#projects" className={getNavLinkClass("projects")}>
             Projects
           </a>
-          <a
-            href="#education"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
+          <a href="#education" className={getNavLinkClass("education")}>
             Education
           </a>
-          <a
-            href="#contact"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
+          <a href="#contact" className={getNavLinkClass("contact")}>
             Contact
           </a>
           <Link to="/resume">
@@ -102,49 +118,49 @@ export function Header() {
         <div className="md:hidden absolute top-full left-0 right-0 bg-background shadow-md py-4 px-4 flex flex-col space-y-4">
           <Link
             to="/"
-            className="text-foreground/80 hover:text-foreground transition-colors"
+            className={getNavLinkClass("home")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Home
           </Link>
           <a
             href="#about"
-            className="text-foreground/80 hover:text-foreground transition-colors"
+            className={getNavLinkClass("about")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             About
           </a>
           <a
             href="#skills"
-            className="text-foreground/80 hover:text-foreground transition-colors"
+            className={getNavLinkClass("skills")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Skills
           </a>
           <a
             href="#experience"
-            className="text-foreground/80 hover:text-foreground transition-colors"
+            className={getNavLinkClass("experience")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Experience
           </a>
           <a
             href="#projects"
-            className="text-foreground/80 hover:text-foreground transition-colors"
+            className={getNavLinkClass("projects")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Projects
           </a>
           <a
             href="#education"
-            className="text-foreground/80 hover:text-foreground transition-colors"
+            className={getNavLinkClass("education")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Education
           </a>
           <a
             href="#contact"
-            className="text-foreground/80 hover:text-foreground transition-colors"
+            className={getNavLinkClass("contact")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact

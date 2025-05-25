@@ -11,7 +11,7 @@
     "format.fix": "prettier --write .",
     "typecheck": "tsc",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "postinstall": "if [ \"$(uname)\" = \"Linux\" ]; then npm install @rollup/rollup-linux-x64-gnu @swc/core-linux-x64-gnu; fi"
   },
   "dependencies": {

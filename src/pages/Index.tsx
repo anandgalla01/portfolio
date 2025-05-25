@@ -12,7 +12,6 @@ import { Footer } from "@/components/portfolio/Footer";
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <FloatingIcons />
       <Header />
       <main className="flex-grow">
         <Hero />

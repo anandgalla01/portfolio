@@ -77,6 +77,13 @@ export function FloatingIcons() {
         delay: 0.4,
       },
       {
+        name: "AWS",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+        size: 38,
+        animation: "path4" as const,
+        delay: 2.2,
+      },
+      {
         name: "Docker",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
         size: 36,
